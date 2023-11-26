@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+<head>
+    <title>Adresses</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        .tableau{
+            width:50%;
+        }
+        .container-tableau{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+        <div th:replace="navbar :: navbar"></div>
+        <h1 class="mt-5 fw-bold text-decoration-underline text-center">Les différentes adresses</h1>
+        <div class="container-tableau">
+            <div class="tableau">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col" >Adresse</th>
+                        <th scope="col">Auteur</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="address : ${allAddresses}">
+                        <td th:text="${address.content}"></td>
+                        <td th:text="${address.auteur}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!--<ul>
+            <li th:each="address : ${allAddresses}">
+                <span th:text="${address.content}" /> ===> Auteur :  <span th:text="${address.auteur}" />
+            </li>
+        </ul> -->
+</body>
+</html>
+
+

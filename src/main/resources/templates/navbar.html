@@ -1,0 +1,44 @@
+<div th:fragment="navbar">
+    <!-- Contenu de la barre de navigation -->
+    <script src="/webjars/bootstrap/5.2.3/js/bootstrap.min.js"></script>
+    <link href="/webjars/bootstrap/5.2.3/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .nav-container{
+            display: flex;
+            width:100%;
+            justify-content: center;
+            align-items: center;
+            background-color: cornflowerblue;
+            gap:20px;
+            height:50px;
+        }
+        .nav-item{
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding: 0 5px;
+        }
+        .nav-item a{
+            color:#FFF;
+            font-size: 20px;
+            text-decoration: none;
+        }
+        .nav-item:hover {
+            background-color: #FFF;
+        }
+        .nav-item:hover a{
+            color:cornflowerblue;
+        }
+    </style>
+
+    <nav>
+        <div class="nav-container">
+            <div class="nav-item">
+                <a href="/greeting" class="active">Greeting</a>
+            </div>
+            <div class="nav-item">
+                <a href="/adresses">Addresses</a>
+            </div>
+        </div>
+    </nav>
+</div>
