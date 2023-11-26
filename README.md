@@ -73,10 +73,9 @@ Pour que ces annotations fonctionnent correctement et que Hibernate puisse faire
 les entités et les tables, j'ai inclus la dependance hibernate dans pom.xml
 
 ### Explication Etape 20 (Voyez-vous tout le contenu de data.sql ?)
-<<<<<<< HEAD
 Oui, nous voyons le contenu de data.sql dans notre base de données.
 Au démarrage de l'application, Spring identifie automatiquement le fichier data.sql dans les ressources. 
-=======
+
 Oui, nous voyons le contenu de data.sql dans notre base de données.
 Au démarrage de l'application, Spring identifie automatiquement le fichier data.sql dans les ressources.
 Les requêtes SQL qu'il contient sont exécutées pour alimenter la base de données. 
