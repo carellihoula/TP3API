@@ -72,7 +72,7 @@ clé primaire. Ici, `GenerationType.IDENTITY` indique que la base de données g�
 Pour que ces annotations fonctionnent correctement et que Hibernate puisse faire le mapping entre 
 les entités et les tables, j'ai inclus la dependance hibernate dans pom.xml
 
-### Explication Etape 20 (Voyez-vous tout le contenu deimport.sql ?)
+### Explication Etape 20 (Voyez-vous tout le contenu de data.sql ?)
 oui nous voyons le contenu deimport.sql dans notre base de données.
 Au démarrage de l'application, Spring identifie automatiquement le fichierimport.sql dans les ressources. 
 Les requêtes SQL qu'il contient sont exécutées pour alimenter la base de données. 
