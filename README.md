@@ -72,9 +72,9 @@ clé primaire. Ici, `GenerationType.IDENTITY` indique que la base de données g�
 Pour que ces annotations fonctionnent correctement et que Hibernate puisse faire le mapping entre 
 les entités et les tables, j'ai inclus la dependance hibernate dans pom.xml
 
-### Explication Etape 20 (Voyez-vous tout le contenu deimport.sql ?)
-oui nous voyons le contenu deimport.sql dans notre base de données.
-Au démarrage de l'application, Spring identifie automatiquement le fichierimport.sql dans les ressources. 
+### Explication Etape 20 (Voyez-vous tout le contenu de data.sql ?)
+Oui, nous voyons le contenu de data.sql dans notre base de données.
+Au démarrage de l'application, Spring identifie automatiquement le fichier data.sql dans les ressources. 
 Les requêtes SQL qu'il contient sont exécutées pour alimenter la base de données. 
 Ainsi, après le redémarrage, les données insérées via ces requêtes apparaissent dans la base de données
 
@@ -82,7 +82,7 @@ Ainsi, après le redémarrage, les données insérées via ces requêtes apparai
 L'annotation @Autowired est utilisée en Spring pour réaliser l'injection de dépendances. 
 En bref, elle permet à Spring de résoudre automatiquement et d'injecter les dépendances nécessaires dans les classes.
 En l'occurrence, j'ai utilisé l'injection par champ avec l'annotation @Autowired
-il existe trois moyens de faire une injection de dependance. 
+il existe trois moyens de faire une injection de dépendance. 
  - `Injection par constructeur`
  - `Injection par methode`
  - `Injection par champ`
