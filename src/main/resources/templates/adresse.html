@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Inknut Antiqua', serif;
+            font-size: 20px;
+            margin-top: 100px;
+        }
+        input{
+            width: 600px;
+            height: 56px;
+            border-radius: 15px;
+            border: 1px solid #000;
+            padding: 8px;
+            font-family: 'Inknut Antiqua', serif;
+
+
+        }
+        .form-input{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+
+        }
+    </style>
+</head>
+<body>
+<!---------------------------------------------- importation de NAVBAR --------------------------------------->
+<div th:replace="navbar :: navbar"></div>
+<!------------------------------------------------------------------------------------------------------------->
+    <form action="/meteo" method="post" th:object="${addressForm}">
+        <div class="form">
+
+            <div class="form-input">
+                <label for="address" >Veuillez Saisair Une Adresse</label>
+                <input type="text"  name="address" id="address" placeholder="Tapez Votre Adresse" />
+            </div>
+
+            <div>
+                <button class="btn btn-primary">Get the weather at the given address !</button>
+            </div>
+        </div>
+
+    </form >
+</body>
+</html>

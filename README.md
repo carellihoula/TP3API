@@ -100,5 +100,43 @@ Ensuite, j'ai inséré les balises <link> pour les styles CSS et <script> pour l
 
 J'ai récupéré bootstrap dans maven repository, ensuite, je l'ai ajouté dans pom.xml
 
+### Faut-il une clé API pour appeler MeteoConcept ?
+
+Oui, pour utiliser l'API de MeteoConcept, on aura généralement besoin d'une clé API. 
+Cette clé API est essentielle pour plusieurs raisons :
+mon API Key (token) ==> 93a413c67d6f63ea863c6d6dd134a48bbcd32abf41dfba1e0ee8e9d59d028767
+
+    - `Authentification : Elle permet à MeteoConcept de vérifier que je suis un utilisateur autorisé.`
+    - `Sécurité : Cela aide à prévenir les usages abusifs ou excessifs de l'API.`
+    - `Suivi : MeteoConcept peut suivre l'utilisation de son API et s'assurer qu'elle fonctionne correctement pour tous les utilisateurs.`
+
+### Quelle URL appeler ? 
+
+ J'ai utilisé une adresse url sous le format ci-après
+ https://api.meteoconcept.com/api/[endpoint]?token=[VOTRE_CLE_API]&[autres_parametres]
+
+ En l'occurrence https://api.meteo-concept.com/api/forecast/daily?token=" + meteoConceptApiKey + "&latlng=" + latitude + "," + longitude;
+
+### Quelle méthode HTTP utiliser ?
+
+La méthode HTTP utilisée est GET. Dans mon code, restTemplate.getForObject fait une requête GET à l'URL spécifiée.
+
+### Comment passer les paramètres d'appels ?
+
+Pour passer des paramètres dans un appel à l'API MeteoConcept, il faut les intégrez directement dans
+l'URL de la requête. Typiquement, ces paramètres incluent la clé API, les coordonnées GPS,etc.
+https://api.meteo-concept.com/api/forecast/daily?token=" + meteoConceptApiKey + "&latlng=" + latitude + "," + longitude;
+
+### Où est l'information dont j'ai besoin dans la réponse:
+
+  * Pour afficher la température du lieu visé par les coordonnées GPS : 
+    Cette information se trouve dans les champs tMin et tMax de l'objet response.getForecast().get(0), 
+    qui représentent respectivement la température minimale et maximale.
+
+  * Pour les prévisions météo : 
+    Les prévisions météorologiques détaillées sont contenues dans **response.getForecast().get(0)**. 
+    Le champ **weather**  donne des informations sur les conditions météorologiques actuelles
+
+       
 ### Lien Github ===> https://github.com/carellihoula/TP3API.git
 ### Lien Github ===> https://github.com/carellihoula/TP3API.git

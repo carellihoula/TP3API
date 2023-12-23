@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Meteo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua&family=Work+Sans&display=swap" rel="stylesheet">
+    <style>
+        .container-meteo-info{
+            display: flex;
+            flex-direction: column;
+            width: 800px;
+            height: 650px;
+            flex-shrink: 0;
+            border-radius: 50px;
+            background: #A3B0E0;
+        }
+        img{
+            width: 254px;
+            height: 218px;
+            flex-shrink: 0;
+        }
+        .white-color{
+            color: #F5F5F5;
+            font-family: 'Inknut Antiqua', serif;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+        h1{
+            font-size: 35px;
+        }
+        .paragraph{
+            font-size: 15px;
+        }
+        .cont{
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+<!---------------------------------------------- importation de NAVBAR --------------------------------------->
+<div th:replace="navbar :: navbar"></div>
+<!------------------------------------------------------------------------------------------------------------->
+
+        <div class="container mt-5">
+                <div class="cont">
+
+                    <div th:if="${error}">
+                        <p th:text="${error}"></p>
+                    </div>
+
+                    <div class="text-center container-meteo-info" th:unless="${error}">
+                        <div>
+                            <img src="https://cdn-icons-png.flaticon.com/512/3942/3942094.png" alt="image-meteo-nuage"/>
+                        </div>
+
+                        <h1 class="white-color" th:text="${temperature}+'°C'"></h1>
+
+                        <div>
+                            <p class="white-color paragraph" th:text="${label}"></p>
+                            <p class="white-color paragraph" th:text="${city}"></p>
+                            <p class="white-color paragraph" th:text="${temperatureMax}+'°C'"></p>
+                            <p class="white-color paragraph" th:text="${temperatureMin}+'°C'"></p>
+                            <p class="white-color paragraph" th:text="${latitude}"></p>
+                            <p class="white-color paragraph" th:text="${longitude}"></p>
+                            <p class="white-color paragraph" th:text="${descriptionMeteo}"></p>
+                        </div>
+
+
+                    </div>
+                </div>
+
+        </div>
+</body>
+</html>
